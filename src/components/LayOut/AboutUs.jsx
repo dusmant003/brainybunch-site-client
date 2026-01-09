@@ -44,7 +44,7 @@ const About = () => {
                                 ABOUT CAMPUS
                             </span>
                             <h3 className="text-lg sm:text-xl font-semibold mt-2">
-                                Hello Kids
+                                Hello Kidss
                             </h3>
                             <p className="text-gray-600 mt-2 text-sm sm:text-base">
                                 Learning Environment

@@ -1,78 +1,59 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
+import React from "react";
+
 const EnquiryNow = () => {
+  return (
+    <section className="w-full py-16 px-4 bg-[#fff7ec]">
+      <div
+        className="max-w-6xl mx-auto rounded-[28px] relative overflow-hidden
+        bg-gradient-to-r from-[#6fcf97] to-[#56ccf2] p-6 sm:p-10"
+      >
+        {/* Cartoon Decoration */}
+        <img
+          src="https://kindergarten.nicdark.com/wp-content/uploads/2025/06/Animal-11.png"
+          alt="cartoon"
+          className="absolute top-4 right-4 w-20 sm:w-24 md:w-28 opacity-90"
+        />
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true,
-        });
-    }, []);
+        {/* Content */}
+        <div className="relative z-10 text-center">
+          <h2
+            className="text-2xl sm:text-3xl md:text-4xl
+            font-[Comic_Neue,cursive] font-extrabold text-white"
+          >
+            Enquiry Now ✨
+          </h2>
 
-    return (
-        <section className="relative w-full bg-white overflow-hidden px-4 lg:px-8 py-4 lg:py-8">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 items-center relative z-10">
+          <p
+            className="mt-2 text-sm sm:text-base md:text-lg
+            font-[Comic_Neue,cursive] text-white/90"
+          >
+            Give your child the best start to a bright future 🌈
+          </p>
 
-                {/* LEFT IMAGE */}
-                <div
-                    className="flex justify-center lg:justify-start"
-                    data-aos="fade-right"
-                >
-                    <img
-                        src="https://skole.vamtam.com/wp-content/uploads/2019/11/illustration-people-2.svg"
-                        alt="CTA Illustration"
-                        className="w-64 md:w-80"
-                    />
-                </div>
+          {/* Buttons */}
+          <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              className="px-6 py-3 rounded-full bg-white
+              text-green-700 font-semibold
+              hover:scale-105 transition shadow-md"
+            >
+              Enquire Now
+            </a>
 
-                {/* RIGHT CONTENT */}
-                <div data-aos="fade-left">
-                    <h1 className="text-[64px] sm:text-[80px] md:text-[110px] font-extrabold text-[#0b2c33] leading-none mb-4">
-                        Come
-                    </h1>
-
-                    <h2 className="text-2xl md:text-4xl font-bold text-[#0b2c33] mb-5">
-                        over and look around.
-                    </h2>
-
-                    <p className="text-[#35536b] text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-                        We will explain everything you are intereste. Join our new session.
-                        If you have any questions or enquiries please feel free to contact us
-                        on the following details provided below or alternatively you can
-                        complete our online enquiry form also located below and we will get
-                        back to you as soon as possible...
-                    </p>
-                    <Link to="/contact">
-                        <button
-                            className={" bg-gradient-to-br from-[#ff9900] to-[#ffb703] text-black font-semibold px-6 py-2 rounded-lg shadow-[4px_4px_0px_#d97706] hover:translate-x-1 hover:translate-y-1 transition-all duration-200"}
-                            data-aos="zoom-in"
-                        >
-                            Enquiry Now !
-                        </button>
-                    </Link>
-
-                </div>
-            </div>
-
-            {/* TOP DECORATION (desktop only) */}
-            <img
-                src="https://skole.vamtam.com/wp-content/uploads/2019/11/illustration-tree-2.svg"
-                alt="Decoration"
-                className="hidden lg:block absolute top-0 right-0 w-96 pointer-events-none"
-                data-aos="fade-down"
-            />
-
-            {/* BOTTOM DECORATION (desktop only) */}
-            <img
-                src="https://skole.vamtam.com/wp-content/uploads/2019/11/leaf-1.svg"
-                alt="Decoration"
-                className="hidden lg:block absolute bottom-0 left-0 w-full pointer-events-none h-28 animate-bounce"
-                data-aos="fade-up"
-            />
-        </section>
-    );
+            <a
+              href="tel:+919999999999"
+              className="px-6 py-3 rounded-full border-2 border-white
+              text-white font-semibold
+              hover:bg-white hover:text-green-700 transition"
+            >
+              Call Us 📞
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default EnquiryNow;

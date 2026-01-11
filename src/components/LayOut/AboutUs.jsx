@@ -2,103 +2,126 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import {
+  Users,
+  MessageCircle,
+  CheckCircle,
+  Star,
+} from "lucide-react";
 import siteConfig from "../../config/siteConfig";
 
-const About = () => {
-    useEffect(() => {
-        AOS.init({ duration: 1000, once: true });
-    }, []);
+export default function About() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
-    const [, restTitle] = siteConfig.branding.title.split("Hello Kids ");
+  return (
+    <section className="bg-white py-14 sm:py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
-    return (
-        <section className="bg-white py-14 sm:py-16 lg:py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10
-        grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* LEFT IMAGES */}
+        <div className="relative flex gap-6 justify-center lg:justify-start">
+          {/* Large Image */}
+          <div
+            data-aos="fade-right"
+            className="rounded-3xl overflow-hidden w-[260px] sm:w-[300px] md:w-[340px]"
+          >
+            <img
+              src={import.meta.env.VITE_SERVICE_URL + "/siteimages/entrance2.jpg"}
+              alt="classroom"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-                {/* LEFT IMAGE + FLOATING CARDS */}
-                <div className="relative flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+          {/* Small Image */}
+          <div
+            data-aos="fade-up"
+            className="absolute -bottom-10 right-0 rounded-3xl overflow-hidden w-[220px] sm:w-[260px] shadow-xl"
+          >
+            <img
+              src={import.meta.env.VITE_SERVICE_URL + "/siteimages/entrance2.jpg"}
+              alt="kids"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
 
-                    {/* MAIN IMAGE (SRC SAME) */}
-                    <div
-                        data-aos="fade-right"
-                        className="rounded-3xl overflow-hidden w-full sm:w-[320px] md:w-[360px]"
-                    >
-                        <img
-                            src={import.meta.env.VITE_SERVICE_URL + "/siteimages/entrance2.jpg"}
-                            alt="Campus"
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
+        {/* RIGHT CONTENT */}
+        <div data-aos="fade-left">
+          {/* Pill */}
+          <span className="inline-flex items-center gap-2 px-4 py-1 mb-5 text-sm rounded-full bg-orange-50 text-orange-500 font-semibold">
+            ✨ About Us
+          </span>
 
-                    {/* FLOATING INFO CARDS */}
-                    <div className="flex flex-col gap-5 sm:gap-6 justify-center">
+          {/* Heading */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900">
+            Nurturing young learners <br />
+            with care and creativity
+          </h2>
 
-                        {/* ABOUT CARD */}
-                        <div
-                            data-aos="fade-up"
-                            className="bg-[#fff1e6] rounded-2xl p-5 sm:p-6 shadow-lg w-full sm:w-64"
-                        >
-                            <span className={`text-sm font-semibold ${siteConfig.text.secondary}`}>
-                                ABOUT CAMPUS
-                            </span>
-                            <h3 className="text-lg sm:text-xl font-semibold mt-2">
-                                Hello Kidss
-                            </h3>
-                            <p className="text-gray-600 mt-2 text-sm sm:text-base">
-                                Learning Environment
-                            </p>
-                        </div>
+          {/* Description */}
+          <p className="text-gray-600 leading-relaxed mb-8 max-w-xl">
+            We provide an inspiring space where children discover new skills,
+            build confidence, and enjoy learning through hands-on activities.
+          </p>
 
-                        {/* EXPERIENCE CARD */}
-                        <div
-                            data-aos="fade-up"
-                            data-aos-delay="200"
-                            className="bg-white rounded-2xl p-5 sm:p-6 shadow-xl w-full sm:w-64"
-                        >
-                            <h3 className="text-3xl sm:text-4xl font-bold text-[#ffb703]">
-                                10+
-                            </h3>
-                            <p className="text-gray-600 mt-2 text-sm sm:text-base">
-                                Years of Excellence
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-
-                {/* RIGHT CONTENT */}
-                <div data-aos="fade-left" className="text-center lg:text-left">
-                    <p className={` ${siteConfig.text.secondary} font-semibold mb-3 sm:mb-4`}>
-                        About Us
-                    </p>
-
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug mb-5 sm:mb-6">
-                        Welcome To{" "}
-                        <span className="text-[#ffb703]">Hello Kids</span>{" "}
-                        {restTitle}
-                    </h2>
-
-                    <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base border-l-4 border-red-600 pl-4">
-                        Our mission is to prepare education leaders and innovators who will
-                        change the world by expanding opportunities and outcomes for learners
-                        everywhere.
-                    </p>
-
-                    <Link to="/About/about-vss">
-                        <button
-                            data-aos="zoom-in"
-                            className="bg-gradient-to-br from-[#ff9900] to-[#ffb703] text-black font-semibold px-6 py-2 rounded-lg shadow-[4px_4px_0px_#d97706] hover:translate-x-1 hover:translate-y-1 transition-all duration-200"
-                        >
-                            View More
-                        </button>
-                    </Link>
-                </div>
-
+          {/* FEATURES */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+            <div className="flex items-start gap-4">
+              <div className="bg-[#0b4a6f] text-white p-3 rounded-full">
+                <Users size={22} />
+              </div>
+              <div>
+                <h4 className="font-semibold text-lg">
+                  Experienced & Caring Teachers
+                </h4>
+                <p className="text-gray-600 text-sm mt-1">
+                  Child centered learning approach
+                </p>
+              </div>
             </div>
-        </section>
-    );
-};
 
-export default About;
+            <div className="flex items-start gap-4">
+              <div className="bg-[#0b4a6f] text-white p-3 rounded-full">
+                <MessageCircle size={22} />
+              </div>
+              <div>
+                <h4 className="font-semibold text-lg">
+                  Strong Parent-Teacher Communication
+                </h4>
+                <p className="text-gray-600 text-sm mt-1">
+                  Focus on creativity & imagination
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CHECK LIST */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {[
+              "Child centered learning approach",
+              "Experienced early education teacher",
+              "Focus on creativity & imagination",
+              "Clean, safe & joyful environment",
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <CheckCircle className="text-[#0b4a6f]" size={18} />
+                <span className="text-gray-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* BUTTON + REVIEWS */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+            <Link to="/About/about-vss">
+              <button className={`${siteConfig.background.bgcolor} hover:scale-105 duration-500 transition-all text-white font-semibold px-7 py-3 rounded-full flex items-center gap-2`}>
+                Know More →
+              </button>
+            </Link>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}

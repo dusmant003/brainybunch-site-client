@@ -12,6 +12,8 @@ import EventCarousel from '../../components/LayOut/EventCarousel'
 import StudentAndStafDetails from '../../components/LayOut/Student&StafDetails'
 import EnquiryNow from '../../components/LayOut/EnquiryNow'
 import Gallery from '../../components/LayOut/Gallery'
+import PaintingHero from '../../components/LayOut/PaintingHero'
+import Banner from '../../components/LayOut/Banner'
 
 const Home = () => {
     const [isBannerVisible, setIsBannerVisible] = useState(false);
@@ -24,9 +26,11 @@ const Home = () => {
         <>
             <Hero />
             <AboutUs />
-            <EnquiryNow />
+            <Banner />
             <Gallery />
+            <PaintingHero />
             <NewsAndInformation />
+            <EnquiryNow />
             <WhyChooseUs />
             <SummerCourseBanner
                 isVisible={isBannerVisible}

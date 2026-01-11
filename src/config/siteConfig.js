@@ -3,7 +3,7 @@ import hkislogo from '../assets/images/hk_logo.png';
 const siteConfig = {
     branding: {
         hkislogo,
-        title: "Hello Kids Edurite",
+        title: "New Brainy Bunch Pre School",
         title2: "HK Edurate",
         tagline: "Learn • Grow • Succeed",
     },
@@ -25,7 +25,7 @@ const siteConfig = {
         secondary: 'text-blue-900',
     },
     background:{
-        bgcolor:"bg-orange-500",
+        bgcolor:" bg-gradient-to-r from-orange-400 to-pink-500",
     }
 };
 

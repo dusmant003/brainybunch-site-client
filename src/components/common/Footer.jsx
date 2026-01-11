@@ -1,82 +1,146 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaTwitter,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import siteConfig from "../../config/siteConfig";
-
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8">
-      <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="relative bg-[#0b1220] text-white pt-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-        {/* College Name & Logo */}
-        <div>
-          <img src={`${siteConfig.branding.hkislogo}`} alt="College Logo" className="h-20 mb-3" />
-          <h2 className="text-2xl font-bold">{`${siteConfig.branding.title}`}</h2>
-          <p className="text-gray-400 mt-2">Shaping the future with quality education.</p>
-        </div>
+        {/* TOP CONTACT BAR */}
+        <div className="bg-[#2a3443] rounded-2xl px-6 py-5 flex flex-col lg:flex-row items-center justify-between gap-6 mb-16">
 
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-xl font-semibold">Quick Links</h3>
-          <ul className="mt-2 space-y-2">
-            <li><a href="/" className="text-gray-400 hover:text-white">Home</a></li>
-            <li><a href="/About/about-vss" className="text-gray-400 hover:text-white">About Us</a></li>
-            <li><a href="/Gallery/vss-gallery" className="text-gray-400 hover:text-white">Gallery</a></li>
-            {/* <li><a href="/Academics" className="text-gray-400 hover:text-white">Academics</a></li>
-            <li><a href="/Organisations" className="text-gray-400 hover:text-white">Organisations</a></li> */}
-            <li><a href="/contact" className="text-gray-400 hover:text-white">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* Contact & Social Links */}
-        <div>
-          <h3 className="text-xl font-semibold">Contact</h3>
-          <p className="text-gray-400 mt-2">{siteConfig.contact.address}</p>
-          <p className="text-gray-400">{`Email: ${siteConfig.contact.email}`}</p>
-          <p className="text-gray-400">{`Phone: ${siteConfig.contact.phone}`}</p>
-
-          {/* Social Icons */}
-          <div className="flex space-x-4 mt-4">
-            <a
-              href="https://www.facebook.com/vrindavan.educationalinstitutions"
-              className="text-gray-400 hover:text-white text-xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              href="https://x.com/vrindavanbhpt"
-              className="text-gray-400 hover:text-white text-xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href="https://www.instagram.com/vrindavansmartschool"
-              className="text-gray-400 hover:text-white text-xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="https://www.youtube.com/@vrindavansmartschool"
-              className="text-gray-400 hover:text-white text-xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaYoutube />
-            </a>
+          <div className="flex flex-col md:flex-row items-center gap-6 text-sm">
+            <span className="flex items-center gap-2">
+              <FaPhoneAlt className="text-orange-400" />
+              {siteConfig.contact.phone}
+            </span>
+            <span className="flex items-center gap-2">
+              <FaEnvelope className="text-orange-400" />
+              {siteConfig.contact.email}
+            </span>
+            <span className="flex items-center gap-2">
+              <FaMapMarkerAlt className="text-orange-400" />
+              {siteConfig.contact.address}
+            </span>
           </div>
 
+          <div className="flex gap-3">
+            <a className="footer-social" href="#"><FaTwitter /></a>
+            <a className="footer-social" href="#"><FaFacebookF /></a>
+            <a className="footer-social" href="#"><FaInstagram /></a>
+            <a className="footer-social" href="#"><FaYoutube /></a>
+          </div>
+        </div>
+
+        {/* MAIN FOOTER GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-14 border-b border-white/10">
+
+          {/* BRAND */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src={siteConfig.branding.hkislogo}
+                alt="logo"
+                className="h-14"
+              />
+              <h2 className="text-2xl font-bold">
+                {siteConfig.branding.title}
+              </h2>
+            </div>
+
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Bright Beginnings Kindergarten is a learning space where children
+              explore, play, and grow in a safe, loving, and creative environment.
+            </p>
+          </div>
+
+          {/* QUICK LINKS (NAVBAR LINKS SAME) */}
+          <div>
+            <h3 className="footer-title">Quick Links</h3>
+            <ul className="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/About/about-vss">About Us</a></li>
+              <li><a href="/Gallery/vss-gallery">Gallery</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          {/* PROGRAMS */}
+          <div>
+            <h3 className="footer-title">Our Programs</h3>
+            <ul className="footer-links">
+              <li>Playgroup Program</li>
+              <li>Nursery Program</li>
+              <li>Junior KG Program</li>
+              <li>Activity Programs</li>
+            </ul>
+          </div>
+
+          {/* SCHOOL HOURS */}
+          <div>
+            <h3 className="footer-title">School Hours</h3>
+
+            <ul className="text-sm space-y-2 text-gray-300">
+              <li className="flex justify-between">
+                <span className="text-orange-400">Monday – Friday:</span>
+                <span>9:00 AM – 12:30 PM</span>
+              </li>
+              <li className="flex justify-between">
+                <span className="text-orange-400">Saturday:</span>
+                <span>9:00 AM – 11:30 AM</span>
+              </li>
+              <li className="flex justify-between">
+                <span className="text-orange-400">Sunday:</span>
+                <span>Closed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* COPYRIGHT */}
+        <div className="text-center text-sm text-gray-400 py-6">
+          © {new Date().getFullYear()} {siteConfig.branding.title}. All Rights Reserved.
         </div>
       </div>
 
-      {/* Bottom Section */}
-      <div className="text-center text-gray-500 text-sm mt-6 border-t border-gray-700 pt-4">
-        © {new Date().getFullYear()} {`${siteConfig.branding.title}`}. All rights reserved.
-      </div>
+      {/* SMALL HELPERS */}
+      <style jsx>{`
+        .footer-title {
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+        .footer-links li {
+          margin-bottom: 0.6rem;
+          color: #cbd5e1;
+          cursor: pointer;
+        }
+        .footer-links li:hover {
+          color: white;
+        }
+        .footer-social {
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          border: 1px solid rgba(255,255,255,0.3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s;
+        }
+        .footer-social:hover {
+          background: #ff7a18;
+          border-color: #ff7a18;
+        }
+      `}</style>
     </footer>
   );
 };
